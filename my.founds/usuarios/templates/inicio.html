@@ -1,0 +1,16 @@
+{% extends 'bases/inicio.html' %}
+{% load static %}
+
+{% block 'cabecalho' %}
+    <link href="{% static 'perfil/css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'perfil/css/gerenciar.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'conteudo' %}
+    <div>
+        <img src="{% static 'usuarios/img/home.png' %}">
+        <img src="{% static 'usuarios/img/profile.png' %}">
+        <img src="{% static 'usuarios/img/contato.png' %}">
+    </div>
+{% endblock %}
