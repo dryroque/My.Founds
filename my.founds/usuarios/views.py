@@ -72,3 +72,10 @@ def logout(request):
 # funcao da pagina inicio
 def inicio(request):
     return render(request, 'inicio.html')
+
+# funcao redefinir senha
+def redefinir_senha(request):
+    messages.add_message(request, constants.SUCCESS, 'Um link para a redefinição de senha será enviado para seu e-mail!')
+    return render(request, 'redefinir_senha.html')
+        
+    

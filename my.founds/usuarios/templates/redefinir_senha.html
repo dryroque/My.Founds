@@ -1,0 +1,39 @@
+{% extends 'bases/redefinir.html' %}
+{% load static %}
+
+{% block 'cabecalho' %}
+    <link href="{% static 'usuarios/css/cadastro.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block 'conteudo' %}
+    <div class="col-md">
+        <br>
+        <br>
+        <div class="box-form">
+            <div class="box-circle">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+                <div class="circle c3"></div>
+            </div>
+            <br>
+            <h3>Digite seu e-mail</h3>
+            {% if messages %}
+                {% for message in messages %}
+                    <section class="alert {{message.tags}}">
+                        {{message}}
+                    </section>
+                {% endfor %}
+            {% endif %}
+            <form action="{% url 'redefinir_senha' %}" method="POST">{% csrf_token %}
+                <label>Email</label>
+                <input type="text" class="input-form" name="username" id="">
+                <br>
+                <br>
+                <input type="submit" value="Enviar" class="btn-cadastro">
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+{% endblock %}
